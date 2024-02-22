@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --invisible: rgba(241, 241, 241, 0);
+    --primary: rgba(241, 241, 241, 0.2);
+}
+
+
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--invisible);
+}
+
+*::-webkit-scrollbar {
+    width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--invisible);
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 14px;
+    border: 3px solid var(--invisible);
+}
