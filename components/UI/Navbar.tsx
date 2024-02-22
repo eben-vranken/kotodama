@@ -45,16 +45,18 @@ const Navbar: FunctionComponent = () => {
 
     return (
         <nav className="h-16 p-4 sticky top-0 z-20 bg-body flex items-center justify-between border-b border-white/25">
-            {/* Nav Brand */}
-            <Link href={'/'} className="flex items-center gap-x-1 cursor-pointer hover:opacity-75">
-                <BowlFood size={30} className="text-primary" />
-                <h1 className="font-bold">Kotodama</h1>
-            </Link>
+            <section className="flex items-center gap-x-4">
+                {/* Nav Brand */}
+                <Link href={'/'} className="flex items-center gap-x-1 cursor-pointer hover:opacity-75">
+                    <BowlFood size={30} className="text-primary" />
+                    <h1 className="font-bold">Kotodama</h1>
+                </Link>
 
-            {/* Active Group */}
-            <section className="flex items-center gap-x-1 text-sm opacity-25 hover:opacity-50 transition-opacity cursor-pointer duration-200">
-                <CaretUpDown size={15} weight="bold" />
-                <span className="font-semibold">Japanese</span>
+                {/* Active Group */}
+                <section className="flex items-center gap-x-1 text-sm opacity-25 hover:opacity-50 transition-opacity cursor-pointer duration-200">
+                    <CaretUpDown size={15} weight="bold" />
+                    <span className="font-semibold">Japanese</span>
+                </section>
             </section>
 
             {/* Navbar Items */}
