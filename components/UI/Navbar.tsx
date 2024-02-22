@@ -71,11 +71,11 @@ const Navbar: FunctionComponent = () => {
 
                 {/* Icons */}
                 {/* FullScreen Toggle */}
-                <section className={`p-[5px] rounded cursor-pointer  ${fullscreen ? 'bg-primary/20' : 'bg-text/5 hover:bg-text/10'}`} onClick={handleToggleFullscreen}>
-                    <CornersOut size={25} className="opacity-75" />
+                <section className={`p-[5px] rounded cursor-pointer  ${fullscreen ? 'bg-primary/20' : 'hover:bg-text/10'}`} onClick={handleToggleFullscreen}>
+                    < CornersOut size={25} className="opacity-75" />
                 </section>
             </section>
-        </nav>
+        </nav >
     )
 }
 
