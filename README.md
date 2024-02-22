@@ -11,16 +11,4 @@ Kotodama, meaning "spirit of words" in Japanese, is an open-source flashcard pro
 - **Data privacy:** Keep your data safe and secure with offline storage and no third-party tracking.
 - **Open-source:** Contribute to the project and be a part of the learning community.
 
-## Getting Started 🚀
-
-To get started with Kotodama, follow the installation instructions in the [documentation](link-to-docs).
-
-## Contributing 🤝
-
-We welcome contributions! Check out the [contribution guidelines](link-to-contributing) to get involved.
-
-## License 📜
-
-This project is licensed under the [MIT License](link-to-license).
-
 Happy Learning! 📚✨
