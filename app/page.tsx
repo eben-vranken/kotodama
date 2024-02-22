@@ -1,6 +1,10 @@
 'use client';
 
+// Hooks
 import getLibraries from "@/hooks/flashcards/getLibraries";
+
+// Next
+import Image from "next/image";
 
 // Icons
 import { Plus } from "@phosphor-icons/react";
@@ -14,6 +18,7 @@ import { useEffect, useState } from "react";
 // Components
 import Link from "next/link";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
+import HeroImage from "@/public/hero.jpg";
 
 export default function Home() {
   const [libraries, setLibraries] = useState<FileEntry[]>([]);
@@ -37,9 +42,12 @@ export default function Home() {
   const libraryElements = libraries.map((library) => {
     // Render library elements here
     return (
-      <section>
-        {/* ... library content */}
-      </section>
+      <Link href={`/library?path=${library.path}`} className="flex flex-col gap-y-1 items-center justify-center p-3 h-40 border border-white/20 rounded-lg bg-body cursor-pointer hover:brightness-125 transition-all duration-300">
+        {/* Library Name */}
+        <span className="font-bold">
+          {library.name}
+        </span>
+      </Link>
     );
   });
 
@@ -47,16 +55,20 @@ export default function Home() {
     // Library Selection
     <main className="flex flex-col !max-w-[1000px] py-8 gap-y-8">
       {/* Heading */}
-      <section className="flex flex-col gap-y-2 w-full border-b pb-5 border-white/25 border-dashed">
-        <h1 className="text-4xl font-bold">Find a library</h1>
-        <p className="text-sm opacity-75">Study any subject you want</p>
+      <section className="flex flex-col gap-y-2 relative p-8 justify-end select-none w-full cursor-pointer h-[250px] rounded-2xl overflow-hidden">
+        <Image src={HeroImage} alt="Hero Image" layout="fill" objectFit="cover" className="z-0 blur-sm  hover:brightness-[85%] transition-all duration-150" />
 
-        {/* Search Bar */}
-        <input type="text" name="library" className="mt-3 p-2 rounded bg-text/5 outline-none text-text/50 placeholder:text-text/25" placeholder="Search for a library" />
+        <section className="flex flex-col gap-y-2 w-full border-b pb-5 border-white/25 border-dashed">
+          <h1 className="text-4xl font-bold z-10">Find a library</h1>
+          <p className="text-sm opacity-75 z-10">Study any subject you want</p>
+        </section>
       </section>
 
-      {/* Available Libraries */}
-      <section>
+      {/* Search Bar */}
+      <input type="text" name="library" className="mt-3 p-2 rounded bg-text/5 outline-none text-text/50 placeholder:text-text/25" placeholder="Search for a library" />
+
+      {/* Libraries */}
+      <section className="flex flex-col gap-y-2">
         <h1 className="text-lg font-bold">My libraries</h1>
         {/* Loading */}
         {isLoading &&
@@ -65,7 +77,7 @@ export default function Home() {
           </section>
         }
 
-        {/* Libraries */}
+        {/* No Libraries */}
         {libraries.length === 0 && !isLoading &&
           <section className="mt-10 w-full flex flex-col items-center gap-y-2">
             <span className="opacity-50">No libraries found</span>
@@ -77,7 +89,10 @@ export default function Home() {
           </section>
         }
 
-        {libraryElements}
+        {/* Library grid */}
+        <section className="grid grid-cols-4 gap-4 w-full">
+          {libraryElements}
+        </section>
 
       </section>
     </main>
