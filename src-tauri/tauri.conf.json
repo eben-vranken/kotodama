@@ -31,7 +31,7 @@
         "exists": true,
         "scope": [
           "$DOCUMENT/*",
-          "$DOCUMENT/kotodama/*"
+          "$DOCUMENT/kotodama/**"
         ]
       },
       "path": {

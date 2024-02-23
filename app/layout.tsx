@@ -11,16 +11,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-
-
-      <body className={`${inter.className} flex flex-col  bg-body text-text`}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-body text-text relative`}>
         <Navbar />
         <section className="flex flex-col items-center [&>*]:max-w-[1500px] [&>*]:w-[95vw]">
           {children}
         </section>
-
       </body>
     </html>
   );

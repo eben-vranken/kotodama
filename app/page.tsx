@@ -1,7 +1,7 @@
 'use client';
 
 // Hooks
-import getLibraries from "@/hooks/flashcards/getLibraries";
+import getLibaryList from "@/hooks/kotodama/library/getLibraryList";
 
 // Next
 import Image from "next/image";
@@ -27,7 +27,7 @@ export default function Home() {
   useEffect(() => {
     const fetchLibraries = async () => {
       try {
-        const libraryList = await getLibraries();
+        const libraryList = await getLibaryList();
         setLibraries(libraryList);
         setIsLoading(false); // Set loading to false after data is fetched
       } catch (error) {
@@ -69,7 +69,15 @@ export default function Home() {
 
       {/* Libraries */}
       <section className="flex flex-col gap-y-2">
-        <h1 className="text-lg font-bold">My libraries</h1>
+        <nav className="flex items-center justify-between">
+          {/* Nav Title */}
+          <h1 className="text-lg font-bold">My libraries</h1>
+
+          {/* Nav Items */}
+          <section>
+            <Link href={'/createLibrary'} className="px-3 py-2 bg-primary rounded font-medium text-sm">Create New</Link>
+          </section>
+        </nav>
         {/* Loading */}
         {isLoading &&
           <section className="mt-16 w-full flex flex-col items-center gap-y-2">

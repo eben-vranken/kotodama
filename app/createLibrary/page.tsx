@@ -1,7 +1,7 @@
 'use client'
 
 // Custom Hooks
-import createLibrary from "@/hooks/flashcards/createLibrary";
+import createLibrary from "@/hooks/kotodama/library/createLibrary";
 
 // React
 import { FormEvent, FunctionComponent, useState } from "react";
